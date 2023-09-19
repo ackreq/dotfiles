@@ -1,0 +1,31 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+alias q='exit'
+alias x='startx'
+#alias a='sudo apt'
+alias p='sudo pacman'
+
+alias t='tmux new-session -A -s main'
+alias ta='tmux attach -t'
+alias tl='tmux list-sessions'
+alias tn='tmux new-session -s'
+alias tk='tmux kill-session -t'
+
+alias cds='cd /opt/sources/'
+alias cdp='cd $HOME/Projects'
+alias cdt='mkdir -p /tmp/playground/ && cd /tmp/playground/'
+
+alias cls='clear; ls -l'
+#alias bat='batcat'
+alias lat='bat -n --style=plain --paging=always'
+alias ls='exa --icons --sort extension --group-directories-first'
+alias la='ls -la'
+alias lg='ls -la --git'
+
+alias mntwin='sudo mount /dev/<sdXY> /mnt/windows'
+#alias mntwin2='sudo mount /dev/<sdXY> /mnt/windows'
+alias umntwin='sudo umount /mnt/windows'
