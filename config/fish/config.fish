@@ -12,6 +12,7 @@ set fish_greeting
 #--------------------------------------------------- export ---
 set EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+# set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
 
 #--------------------------------------------- alias & abbr ---
 source $HOME/.config/shell/alias
