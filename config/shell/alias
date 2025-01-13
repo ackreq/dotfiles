@@ -22,7 +22,7 @@ alias cdt='mkdir -p /tmp/playground/ && cd /tmp/playground/'
 alias cls='clear; ls -l'
 #alias bat='batcat'
 alias lat='bat -n --style=plain --paging=always'
-alias ls='exa --icons --sort extension --group-directories-first'
+alias ls='eza --icons --sort extension --group-directories-first'
 alias la='ls -la'
 alias lg='ls -la --git'
 
