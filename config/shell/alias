@@ -1,31 +1,55 @@
+# ------------------------------------------------- System ---
 alias ..='cd ..'
 alias ...='cd ../..'
+
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
+alias cl='clear; ll'
+alias c='clear'
 alias q='exit'
-alias x='startx'
-#alias a='sudo apt'
-alias p='sudo pacman'
+#alias x='startx'
 
+alias a='sudo apt'
+#alias p='sudo pacman'
+
+alias mntwin='sudo mount /dev/<sdXY> /mnt/windows'
+#alias mntwin2='sudo mount /dev/<sdXY> /mnt/windows'
+alias umntwin='sudo umount /mnt/windows'
+
+# -------------------------------------------------- Tools ---
 alias t='tmux new-session -A -s main'
 alias ta='tmux attach -t'
 alias tl='tmux list-sessions'
 alias tn='tmux new-session -s'
 alias tk='tmux kill-session -t'
 
+alias bat='batcat'
+alias lat='batcat -n --style=plain --paging=always'
+
+alias ls='eza --icons --sort extension --group-directories-first'
+alias la='ls -la'
+alias lg='ls -la --git'
+alias tree='eza -T --icons'
+alias ts='eza -TL 1 --icons'
+
+alias v='vim'
+alias vv='nvim'
+
+alias wcc='warp-cli connect'
+alias wcd='warp-cli disconnect'
+
+# -------------------------------------------- Directories ---
 alias cds='cd /opt/sources/'
 alias cdp='cd $HOME/Projects'
 alias cdt='mkdir -p /tmp/playground/ && cd /tmp/playground/'
 
-alias cls='clear; ls -l'
-#alias bat='batcat'
-alias lat='bat -n --style=plain --paging=always'
-alias ls='eza --icons --sort extension --group-directories-first'
-alias la='ls -la'
-alias lg='ls -la --git'
-
-alias mntwin='sudo mount /dev/<sdXY> /mnt/windows'
-#alias mntwin2='sudo mount /dev/<sdXY> /mnt/windows'
-alias umntwin='sudo umount /mnt/windows'
+# ---------------------------------------------------- Git ---
+alias gtcl='git clone'
+alias gts='git status'
+alias gta='git add .'
+alias gtc='git commit -m'
+alias gtl='git log --oneline --graph --all --decorate'
+alias gtp='git push'
+alias gtd='git diff'
