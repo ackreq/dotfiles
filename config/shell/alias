@@ -48,7 +48,7 @@ alias cdt='mkdir -p /tmp/playground/ && cd /tmp/playground/'
 # ---------------------------------------------------- Git ---
 alias gtcl='git clone'
 alias gts='git status'
-alias gta='git add .'
+alias gta='git add'
 alias gtc='git commit -m'
 alias gtl='git log --oneline --graph --all --decorate'
 alias gtp='git push'

@@ -1,7 +1,7 @@
 ################################################ Basic Settings
 set previewer ~/.config/lf/scope
 set preview true
-set hidden true
+# set hidden true
 set drawbox true
 set icons true
 set ignorecase true
