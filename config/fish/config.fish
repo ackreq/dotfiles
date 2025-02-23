@@ -22,3 +22,4 @@ source $HOME/.config/shell/abbr.fish
 #--------------------------------------------------- prompt ---
 source $HOME/.config/fish/prompts/sashimi.fish
 #starship init fish | source
+zoxide init fish | source
