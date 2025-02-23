@@ -13,6 +13,7 @@ set fish_greeting
 set EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 # set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
+export MANROFFOPT="-c"
 
 #--------------------------------------------- alias & abbr ---
 source $HOME/.config/shell/alias
