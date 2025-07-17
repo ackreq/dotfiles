@@ -1,5 +1,5 @@
 function jp
-    jupyter-notebook --notebook-dir=~/Projects/<dir> 2>/dev/null &
+    jupyter-notebook --notebook-dir=~/Projects/<dir> &> /dev/null &
 end
 
 
