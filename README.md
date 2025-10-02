@@ -42,8 +42,23 @@
 
 </div>
 
+&nbsp;
+
+## Productivity Tools
+
+- [**Zotero**](https://www.zotero.org) → Research & Reading Sync
+- [**Trello**](https://trello.com) → Task & Workflow Management
+- [**Xmind**](https://xmind.com) → Mind Mapping
+
+&nbsp;
+
 <!-- BADGES-->
 <div align="center">
-  <img src="https://img.shields.io/github/license/slash071/dotfiles?color=purple">
-  <img src="https://img.shields.io/github/last-commit/slash071/dotfiles"> 
+
+  [![GitHub license](https://img.shields.io/github/license/ackreq/dotfiles?color=purple)][license]&nbsp;
+  [![Last Commit](https://img.shields.io/github/last-commit/ackreq/dotfiles)][Last Commit]&nbsp;
+
 </div>
+
+[license]: https://github.com/ackreq/dotfiles/blob/main/LICENSE
+[Last Commit]: https://github.com/ackreq/dotfiles/commits/main
