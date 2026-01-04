@@ -1,20 +1,3 @@
-# commented lines are the defaults
-# man 5 alacritty (>0.13) for full config manual
-
-import = [
-  # uncomment the palette you want below:
-  "~/.config/alacritty/palettes/tokyonight-storm.toml"
-  # "~/.config/alacritty/palettes/tokyonight.toml"
-  # "~/.config/alacritty/palettes/dracula.toml"
-  # "~/.config/alacritty/palettes/gruvbox-dark.toml"
-  # "~/.config/alacritty/palettes/gruvbox-material-medium-dark.toml"
-  # "~/.config/alacritty/palettes/ayu-light.toml"
-  # "~/.config/alacritty/palettes/ayu-mirage.toml"
-  # "~/.config/alacritty/palettes/ayu-dark.toml"
-  # "~/.config/alacritty/palettes/catppuccin-mocha.toml"
-  # "~/.config/alacritty/palettes/catppuccin-macchiato.toml"
-]
-
 #[shell]
 # program               = "/usr/bin/zsh"
 # args                  = [ "--login", ]
@@ -32,7 +15,7 @@ TERM                  = "xterm-256color"
 padding               = { x = 6, y = 6 }
 #dynamic_padding       = true
 #decorations           = "None"
-opacity               = 1.0
+opacity               = 0.9
 #blur                  = true
 #startup_mode          = "Windowed"
 title                 = "Alacritty"
@@ -131,6 +114,24 @@ bindings = [
 ]
 
 [debug]
+
+[general]
+# commented lines are the defaults
+# man 5 alacritty (>0.13) for full config manual
+
+import = [
+  # uncomment the palette you want below:
+  # "~/.config/alacritty/palettes/tokyonight-storm.toml"
+  "~/.config/alacritty/palettes/tokyonight.toml"
+  # "~/.config/alacritty/palettes/dracula.toml"
+  # "~/.config/alacritty/palettes/gruvbox-dark.toml"
+  # "~/.config/alacritty/palettes/gruvbox-material-medium-dark.toml"
+  # "~/.config/alacritty/palettes/ayu-light.toml"
+  # "~/.config/alacritty/palettes/ayu-mirage.toml"
+  # "~/.config/alacritty/palettes/ayu-dark.toml"
+  # "~/.config/alacritty/palettes/catppuccin-mocha.toml"
+  # "~/.config/alacritty/palettes/catppuccin-macchiato.toml"
+]
 #render_timer          = false
 #persistent_logging    = false
 #log_level             = "Warn"
