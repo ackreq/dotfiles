@@ -9,7 +9,8 @@ PS1='[\u@\h \W]\$ '
 export PATH=$HOME/.cargo/bin/:$HOME/.local/bin/:$PATH
 
 #-------------------------------------------------- aliases ---
-source $HOME/.config/shell/alias
+source ~/.config/shell/alias
+source ~/.config/lf/icons
 
 #------------------------------------------------ functions ---
 take() {
@@ -26,7 +27,8 @@ ds() {
 
 #----------------------------------------- autostart startx ---
 if [[ -z "${DISPLAY}" ]] && [[ "${XDG_VTNR}" -eq 1 ]]; then
-    echo -e "\n\033[32mStarting the graphical server in 5 seconds...\033[0m"
-    sleep 5
-    exec startx -- -quiet
+   echo -e "\n\033[32mStarting the graphical server in 5 seconds...\033[0m"
+   sleep 5
+   exec niri-session
+   # exec startx -- -quiet
 fi

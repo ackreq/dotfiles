@@ -16,10 +16,10 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
 #--------------------------------------------- alias & abbr ---
-source $HOME/.config/shell/alias
-source $HOME/.config/shell/abbr.fish
+source ~/.config/shell/alias
+source ~/.config/shell/abbr.fish
 
 #--------------------------------------------------- prompt ---
-source $HOME/.config/fish/prompts/sashimi.fish
+source ~/.config/fish/prompts/sashimi.fish
 #starship init fish | source
 zoxide init fish | source
