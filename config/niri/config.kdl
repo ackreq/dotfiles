@@ -151,6 +151,10 @@ layout {
         // urgent-gradient from="#800" to="#a33" angle=45
     }
 
+    insert-hint {
+        gradient from="#ffbb6680" to="#505050" angle=45
+    }
+
     // Struts shrink the area occupied by windows
     struts {
         // left 64
@@ -190,14 +194,14 @@ animations {
     // slowdown 3.0
 }
 
-overview {
+/-overview {
   workspace-shadow {
     off
   }
 }
 
 // Set the regular wallpaper on the backdrop.
-layer-rule {
+/-layer-rule {
   match namespace="^quickshell*"
   place-within-backdrop true
 }
@@ -222,16 +226,25 @@ window-rule {
 }
 
 window-rule {
+    open-on-workspace "browse"
+
     match app-id=r#"^firefox$"#
     match app-id=r#"^google-chrome$"#
-    open-on-workspace "browse"
-    open-maximized true
 }
 
 window-rule {
+    open-maximized true
+
+    match app-id=r#"^firefox$"#
+    match app-id=r#"^google-chrome$"#
+    match app-id=r#"^Zotero$"#
+}
+
+window-rule {
+    open-on-workspace "chat"
+
     match app-id=r#"gram\.desktop"#
     exclude title="^Media viewer$"
-    open-on-workspace "chat"
     block-out-from "screencast"
     default-column-width { proportion 0.33333; }
 }
@@ -246,9 +259,9 @@ window-rule {
     match app-id="thunar"
     match app-id="nemo"
     match app-id="org.gnome.Nautilus"
-    match app-id="google-chrome"
+    //match app-id="google-chrome"
     match app-id="obsidian"
-    match app-id="zen"
+    // match app-id="zen"
     match app-id="obs-studio"
 }
 
@@ -274,7 +287,8 @@ binds {
     Mod+Return       hotkey-overlay-title="Terminal: st" { spawn-sh "st -e tmux new-session -A -s main 'fish'"; }
     Mod+Shift+Return hotkey-overlay-title="Terminal: alacritty" { spawn-sh "alacritty -e fish"; }
     Mod+Space        hotkey-overlay-title="Application Launcher" { spawn "fuzzel"; }
-    Mod+D            hotkey-overlay-title="Document Viewer" { spawn "papers"; }
+    Mod+D            hotkey-overlay-title="Zotero Library" { spawn "zotero"; }
+    Mod+Shift+D      hotkey-overlay-title="Document Viewer" { spawn "papers"; }
     Mod+Ctrl+T       hotkey-overlay-title="Telegram" { spawn "telegram"; }
     Mod+B            hotkey-overlay-title="Chrome" { spawn "google-chrome-stable"; }
     Mod+Shift+B      hotkey-overlay-title="Firefox" { spawn "firefox"; }
