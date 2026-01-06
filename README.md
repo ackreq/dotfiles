@@ -45,17 +45,20 @@
       <ul>
         <li>
           <b>WM:</b> <a href="https://wiki.archlinux.org/title/Bspwm">bspwm</a>,
+          <a href="https://github.com/YaLTeR/niri">niri</a>,
           <a href="https://berrywm.org/">berrywm</a>
         </li>
         <li>
-          <b>Bar:</b> <a href="https://github.com/polybar/polybar">Polybar</a>
+          <b>Bar:</b> <a href="https://github.com/polybar/polybar">Polybar</a>,
+          <a href="https://github.com/AvengeMedia/DankMaterialShell">DMS</a>
         </li>
         <li>
           <b>Compositor:</b> <a href="https://github.com/yshui/picom">picom</a>
         </li>
         <li>
           <b>Launcher:</b> <a href="https://wiki.archlinux.org/title/Rofi">Rofi</a>,
-          <a href="https://tools.suckless.org/dmenu/">dmenu</a>
+          <a href="https://tools.suckless.org/dmenu/">dmenu</a>,
+          <a href="https://codeberg.org/dnkl/fuzzel">Fuzzel</a>
         </li>
         <li>
           <b>Hotkey Daemon:</b> <a href="https://github.com/baskerville/sxhkd">sxhkd</a>
