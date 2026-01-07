@@ -292,16 +292,18 @@ binds {
     Mod+Ctrl+T       hotkey-overlay-title="Telegram" { spawn "telegram"; }
     Mod+B            hotkey-overlay-title="Chrome" { spawn "google-chrome-stable"; }
     Mod+Shift+B      hotkey-overlay-title="Firefox" { spawn "firefox"; }
-    Mod+C            hotkey-overlay-title="Text Editor: VSCode" { spawn "code"; }
-    Mod+V            hotkey-overlay-title="Media Player" { spawn "vlc"; }
-    Mod+E            hotkey-overlay-title="File Manager" { spawn "nemo"; }
+    Mod+C            hotkey-overlay-title="VSCode" { spawn "code"; }
+    Mod+Shift+C      hotkey-overlay-title="Gedit" { spawn "gedit"; }
+    Mod+V            hotkey-overlay-title="VLC" { spawn "vlc"; }
+    Mod+E            hotkey-overlay-title="Nemo" { spawn "nemo"; }
+    Mod+L            hotkey-overlay-title="LocalSend" { spawn "localsend"; }
     
     Mod+Shift+Comma    hotkey-overlay-title="Settings" { spawn-sh "dms ipc call settings toggle"; }
     Super+X            hotkey-overlay-title="Lock the Screen" { spawn-sh "dms ipc call lock lock"; }
-    Ctrl+shift+Escape  hotkey-overlay-title="Shutdown" { spawn "poweroff"; }
+    Ctrl+shift+Escape  hotkey-overlay-title="Shutdown" { spawn-sh "dms ipc powermenu toggle"; }
     Ctrl+shift+F2      hotkey-overlay-title="reboot" { spawn "reboot"; }
 
-    // ------------------------------------------------ system keys ---
+    // ------------------------------------------------ System Keys ---
     XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0"; }
     XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
     XF86AudioMute         allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
@@ -315,7 +317,7 @@ binds {
     XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
     
-    // ----------------------------------------------  niri hotkeys ---
+    // ----------------------------------------------  niri Hotkeys ---
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
@@ -459,7 +461,7 @@ binds {
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-    Mod+Shift+C { center-column; }
+    Mod+A { center-column; }
 
     // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }
