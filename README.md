@@ -9,8 +9,8 @@
       <h3 align="center">🐧  Core System</h3>
       <ul>
         <li>
-          <b>Distro:</b> <a href="https://linuxmint.com/">Linux Mint</a>,
-          <a href="https://archlinux.org/">Arch Linux</a>
+          <b>Distro:</b> <a href="https://archlinux.org/">Arch</a>,
+          <a href="https://linuxmint.com/">Mint</a>
         </li>
         <li>
           <b>Shell:</b> <a href="https://fishshell.com/">fish</a>,
@@ -57,7 +57,6 @@
         </li>
         <li>
           <b>Launcher:</b> <a href="https://wiki.archlinux.org/title/Rofi">Rofi</a>,
-          <a href="https://tools.suckless.org/dmenu/">dmenu</a>,
           <a href="https://codeberg.org/dnkl/fuzzel">Fuzzel</a>
         </li>
         <li>
@@ -97,7 +96,7 @@
         </li>
         <li>
           <b>System Info:</b>
-          <a href="https://github.com/dylanaraps/neofetch">neofetch</a>,
+          <a href="https://github.com/dylanaraps/pfetch">pfetch</a>,
           <a href="https://github.com/ssleert/nitch">nitch</a>
         </li>
         <li>
