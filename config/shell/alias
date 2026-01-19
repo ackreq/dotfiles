@@ -40,6 +40,8 @@ alias vv='nvim'
 alias wcc='warp-cli connect'
 alias wcd='warp-cli disconnect'
 
+alias todo='$EDITOR ~/Documents/TODO.md'
+
 # -------------------------------------------- Directories ---
 alias cds='cd /opt/sources/'
 alias cdp='cd $HOME/Projects'
