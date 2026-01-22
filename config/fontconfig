@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <!-- Persian and Arabic language support -->
+    <match>
+        <test name="lang">
+            <string>ar</string>
+        </test>
+        <edit name="family" mode="prepend">
+            <string>Vazirmatn</string>
+        </edit>
+        <edit name="family" mode="append">
+            <string>DejaVu Sans</string>
+        </edit>
+        <edit name="family" mode="append">
+            <string>Noto Sans Arabic</string>
+        </edit>
+        <edit name="family" mode="append">
+            <string>Amiri</string>
+        </edit>
+    </match>
+
+    <match>
+        <test name="lang">
+            <string>fa</string>
+        </test>
+        <edit name="family" mode="prepend">
+            <string>Vazirmatn</string>
+        </edit>
+        <edit name="family" mode="append">
+            <string>DejaVu Sans</string>
+        </edit>
+        <edit name="family" mode="append">
+            <string>Noto Sans Arabic</string>
+        </edit>
+        <edit name="family" mode="append">
+            <string>Amiri</string>
+        </edit>
+    </match>
+</fontconfig>
