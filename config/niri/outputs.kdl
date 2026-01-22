@@ -1,0 +1,20 @@
+// Find output names by running `niri msg outputs`
+output "eDP-1" {
+    // off
+    // mode "1920x1080@120.030"
+    scale 1
+    transform "normal" // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
+    position x=1280 y=0
+    
+    hot-corners {
+        top-left
+    }
+}
+
+/-output "DP-2" {
+   // off
+   mode "1024x768@60.004"
+   scale 1
+   transform "normal"
+   //position x=1280 y=0
+}

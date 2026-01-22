@@ -1,0 +1,92 @@
+layout {
+    gaps 0 // 10
+    center-focused-column "never" // "always", "never", "on-overflow"
+    always-center-single-column
+    background-color "transparent"
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+
+        // Fixed sets the width in logical pixels exactly.
+        // fixed 1920
+    }
+
+    // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
+    // preset-window-heights { }
+    
+    // If you leave the brackets empty, the windows themselves will decide their initial width.
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        off
+        width 2
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+        // active-gradient from="#80c8ff" to="#c7ff7f" angle=45
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    }
+
+    border {
+        on
+        // off
+        width 1
+        active-color "#7fc8ff"
+        inactive-color "#000000"
+        urgent-color "#9b0000"
+
+        // Gradients can use a few different interpolation color spaces.
+        // For example, this is a pastel rainbow gradient via in="oklch longer hue".
+        //
+        // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    }
+
+    shadow {
+        on
+        // draw-behind-window true
+
+        // Softness controls the shadow blur radius.
+        softness 30
+
+        // Spread expands the shadow.
+        spread 5
+
+        // Offset moves the shadow relative to the window.
+        offset x=0 y=5
+
+        // You can also change the shadow color and opacity.
+        color "#0007"
+    }
+
+    tab-indicator {
+        // off
+        gap -8 // 2
+        width 4
+        length total-proportion=0.6
+        position "left"
+        gaps-between-tabs 4
+        corner-radius 8
+        // hide-when-single-tab
+        // place-within-column
+        // active-color "red"
+        inactive-color "#505050"
+        // urgent-color "blue"
+        // active-gradient from="#80c8ff" to="#bbddff" angle=45
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        // urgent-gradient from="#800" to="#a33" angle=45
+    }
+
+    insert-hint {
+        gradient from="#ffbb6680" to="#505050" angle=45
+    }
+
+    // Struts shrink the area occupied by windows
+    struts {
+        // left 64
+        // right 64
+        // top 64
+        // bottom 64
+    }
+}
