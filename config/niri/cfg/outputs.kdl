@@ -5,6 +5,7 @@ output "eDP-1" {
     scale 1
     transform "normal" // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
     position x=1280 y=0
+    focus-at-startup
     
     hot-corners {
         top-left

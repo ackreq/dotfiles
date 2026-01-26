@@ -6,20 +6,20 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // ----------------------------------------------- Applications ---
-    Mod+Return       hotkey-overlay-title="st" { spawn-sh "st -e tmux new-session -A -s main 'fish'"; }
-    Mod+Shift+Return hotkey-overlay-title="Alacritty" { spawn-sh "alacritty -e fish"; }
-    Mod+Space        hotkey-overlay-title="Launcher" { spawn "fuzzel"; }
-    Mod+D            hotkey-overlay-title="Zotero" { spawn "zotero"; }
-    Mod+Shift+D      hotkey-overlay-title="Document Viewer" { spawn "papers"; }
-    Mod+Ctrl+T       hotkey-overlay-title="Telegram" { spawn "telegram"; }
-    Mod+B            hotkey-overlay-title="Chrome" { spawn "google-chrome-stable"; }
-    Mod+Shift+B      hotkey-overlay-title="Firefox" { spawn "firefox"; }
-    Mod+C            hotkey-overlay-title="VSCode" { spawn "code"; }
-    Mod+Shift+C      hotkey-overlay-title="Gedit" { spawn "gedit"; }
-    Mod+V            hotkey-overlay-title="VLC" { spawn "vlc"; }
-    Mod+M            hotkey-overlay-title="Amberol" { spawn "amberol"; }
-    Mod+E            hotkey-overlay-title="Nemo" { spawn "nemo"; }
-    Mod+N            hotkey-overlay-title="Night Mode" { spawn-sh "dms ipc night toggle"; }
+    Mod+Return         hotkey-overlay-title="st" { spawn-sh "st -e tmux new-session -A -s main 'fish'"; }
+    Mod+Shift+Return   hotkey-overlay-title="Alacritty" { spawn-sh "alacritty -e fish"; }
+    Mod+Space          hotkey-overlay-title="Launcher" { spawn "fuzzel"; }
+    Mod+D              hotkey-overlay-title="Zotero" { spawn "zotero"; }
+    Mod+Shift+D        hotkey-overlay-title="Document Viewer" { spawn "papers"; }
+    Mod+Ctrl+T         hotkey-overlay-title="Telegram" { spawn "telegram"; }
+    Mod+B              hotkey-overlay-title="Chrome" { spawn "google-chrome-stable"; }
+    Mod+Shift+B        hotkey-overlay-title="Firefox" { spawn "firefox"; }
+    Mod+C              hotkey-overlay-title="VSCode" { spawn "code"; }
+    Mod+Shift+C        hotkey-overlay-title="Gedit" { spawn "gedit"; }
+    Mod+V              hotkey-overlay-title="VLC" { spawn "vlc"; }
+    Mod+M              hotkey-overlay-title="Amberol" { spawn "amberol"; }
+    Mod+E              hotkey-overlay-title="Nemo" { spawn "nemo"; }
+    Mod+N              hotkey-overlay-title="Night Mode" { spawn-sh "dms ipc night toggle"; }
     
     Mod+Shift+Comma    hotkey-overlay-title="Settings" { spawn-sh "dms ipc call settings toggle"; }
     Super+X            hotkey-overlay-title="Lock Screen" { spawn-sh "dms ipc call lock lock"; }
@@ -50,10 +50,10 @@ binds {
     Mod+Down       { focus-window-down; }
     Mod+Up         { focus-window-up; }
     Mod+Right      { focus-column-right; }
-    Mod+H       { focus-column-left; }
-    Mod+J       { focus-window-down; }
-    Mod+K       { focus-window-up; }
-    Mod+L       { focus-column-right; }
+    Mod+H          { focus-column-left; }
+    Mod+J          { focus-window-down; }
+    Mod+K          { focus-window-up; }
+    Mod+L          { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
@@ -65,6 +65,7 @@ binds {
     Mod+Ctrl+L     { move-column-right; }
 
     // Alternative commands that move across workspaces when reaching
+    // the first or last window in a column.
     // Mod+J          { focus-window-or-workspace-down; }
     // Mod+K          { focus-window-or-workspace-up; }
     // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
@@ -214,8 +215,10 @@ binds {
     // rather than stacked on top of each other.
     Mod+Q { toggle-column-tabbed-display; }
 
-    Print       { screenshot-screen; }
-    Shift+Print { screenshot; }
+    // In the interactive screenshot UI, pressing Ctrl+C will copy the screenshot to the 
+    // clipboard without writing it to disk.
+    Print       { screenshot-screen show-pointer=false; }
+    Shift+Print { screenshot show-pointer=false; }
     Alt+Print   { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may

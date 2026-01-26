@@ -2,6 +2,7 @@ layout {
     gaps 0 // 10
     center-focused-column "never" // "always", "never", "on-overflow"
     always-center-single-column
+    // default-column-display "tabbed"
     background-color "transparent"
 
     preset-column-widths {
@@ -88,5 +89,15 @@ layout {
         // right 64
         // top 64
         // bottom 64
+    }
+}
+
+recent-windows {
+    // off
+    highlight {
+        active-color "#449a999f"
+        urgent-color "#ff9999ff"
+        padding 30
+        corner-radius 0
     }
 }

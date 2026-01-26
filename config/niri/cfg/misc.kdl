@@ -1,9 +1,5 @@
 prefer-no-csd
 
-hotkey-overlay {
-    skip-at-startup
-}
-
 workspace "home"
 workspace "dev"
 workspace "chat"
@@ -12,6 +8,10 @@ spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // screenshot-path null
+
+hotkey-overlay {
+    skip-at-startup
+}
 
 environment {
     QT_QPA_PLATFORM "wayland"
@@ -28,4 +28,7 @@ environment {
 cursor {
     xcursor-theme "Bibata-Modern-Classic"
     xcursor-size 24
+    
+    // hide-when-typing
+    // hide-after-inactive-ms 1000
 }

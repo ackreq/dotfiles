@@ -6,7 +6,7 @@ input {
         }
         // repeat-delay 250
         // repeat-rate 50
-        track-layout "window"
+        track-layout "window" // global
         //numlock
     }
 
@@ -21,9 +21,13 @@ input {
         accel-speed 0.2
         // accel-profile "flat"
         // scroll-factor 1.0
+        // scroll-factor vertical=1.0 horizontal=-2.0
         // scroll-method "two-finger"
-        // disabled-on-external-mouse
+        // scroll-button 273
+        // scroll-button-lock
+        // tap-button-map "left-middle-right"
         // left-handed
+        // disabled-on-external-mouse
         // middle-emulation
     }
 
@@ -33,6 +37,7 @@ input {
         // accel-speed 0.1
         // accel-profile "flat"
         // scroll-factor 1.0
+        // scroll-factor vertical=1.0 horizontal=-2.0
         // scroll-method "no-scroll"
         // left-handed
     }
