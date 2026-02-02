@@ -1,0 +1,122 @@
+#!/usr/bin/env bash
+
+# Package manager with fzf integration
+# https://github.com/ackreq/dotfiles
+
+# Usage: fpf {-a|--aur|-i|--install|-r|--remove} [query]
+
+set -e
+
+# Search and install AUR packages with yay
+aur() {
+    yay -Sl --color=always | \
+    fzf --ansi --nth=2 --multi --query "$*" --preview 'yay -Si {1}/{2}' | \
+    awk '{print $1"/"$2}' | \
+    xargs -ro yay -S
+}
+
+# Search and install official repo packages with pacman
+install() {
+    pacman -Sl --color=always | \
+    fzf --ansi --nth=2 --multi --preview 'pacman -Si {1}/{2}' --query "$*" | \
+    awk '{print $1"/"$2}' | \
+    xargs -ro sudo pacman -S
+}
+
+# Search and remove installed packages
+remove() {
+    pacman -Q --color=always | \
+    fzf --ansi --multi --preview 'pacman -Qi {1}' --query "$*" | \
+    awk '{print $1}' | \
+    xargs -ro sudo pacman -Rs
+}
+
+# Search and view all installed packages
+installed() {
+    pacman -Q --color=always | \
+    fzf --ansi --multi --query "$*" --preview 'pacman -Qi {1}' | \
+    awk '{print $1}' | \
+    xargs -ro pacman -Qi
+}
+
+# Search and view installed AUR packages
+aur_installed() {
+    pacman -Qqm --color=always | \
+    fzf --ansi --multi --query "$*" \
+    --preview 'yay -Qi {}' | \
+    xargs -ro yay -Qi
+}
+
+# Search and remove orphaned packages
+orphans() {
+    if ! pacman -Qtdq &>/dev/null; then
+        echo "No orphaned packages found"
+        return 0
+    fi
+    pacman -Qtdq --color=always | \
+    fzf --ansi --multi --query "$*" \
+    --preview 'pacman -Qi {}' | \
+    xargs -ro sudo pacman -Rsn
+}
+
+# Show help
+show_help() {
+    cat << EOF
+Usage: $(basename "$0") [OPTIONS] [query]
+
+Options:
+  -a, --aur          Search and install AUR packages with yay
+  -i, --install      Search and install official repo packages with pacman
+  -r, --remove       Search and remove installed packages
+  -I, --installed    List and view all installed packages
+  -L, --aur-list     List and view installed AUR packages
+  -o, --orphans      Search and remove orphaned packages
+  -h, --help         Show this help message
+
+Examples:
+  $(basename "$0") -a firefox
+  $(basename "$0") --install
+  $(basename "$0") -L
+EOF
+}
+
+# Parse options
+if [ $# -eq 0 ]; then
+    install ""
+    exit 0
+fi
+
+case "$1" in
+    -a|--aur)
+        shift
+        aur "$@"
+        ;;
+    -i|--install)
+        shift
+        install "$@"
+        ;;
+    -r|--remove)
+        shift
+        remove "$@"
+        ;;
+    -L|--aur-list)
+        shift
+        aur_installed "$@"
+        ;;
+    -I|--installed)
+        shift
+        installed "$@"
+        ;;
+    -o|--orphans)
+        shift
+        orphans "$@"
+        ;;
+    -h|--help)
+        show_help
+        ;;
+    *)
+        echo "Error: Unknown option '$1'" >&2
+        echo "Run '$(basename "$0") --help' for usage" >&2
+        exit 1
+        ;;
+esac
