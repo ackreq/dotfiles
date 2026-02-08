@@ -220,6 +220,7 @@ binds {
     Print       { screenshot-screen show-pointer=false; }
     Shift+Print { screenshot show-pointer=false; }
     Alt+Print   { screenshot-window; }
+    Ctrl+Print  { screenshot-window write-to-disk=false; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
