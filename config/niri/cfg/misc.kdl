@@ -2,7 +2,7 @@ prefer-no-csd
 
 workspace "home"
 workspace "dev"
-workspace "chat"
+workspace "lab"
 
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 

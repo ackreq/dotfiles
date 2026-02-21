@@ -31,7 +31,6 @@ window-rule {
 }
 
 window-rule {
-    open-on-workspace "chat"
     block-out-from "screencast"
     default-column-width { proportion 0.33333; }
 
@@ -59,12 +58,12 @@ window-rule {
 window-rule {
     open-maximized true
 
-    match app-id=r#"firefox$"#
-    match app-id=r#"google-chrome"#
+    // match app-id=r#"firefox$"#
+    // match app-id=r#"google-chrome"#
     match app-id=r#"Zotero"#
 }
 
-window-rule {
+/-window-rule {
     default-column-width { proportion 0.66667; }
 
     // match app-id=r#"vlc"#
