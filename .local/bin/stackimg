@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# ─── Configuration ─────────────────────────────────────────────────
+
+MODE="blur"          # "blur" or "transparent"
+GAP=35               # Gap between images in pixels
+PADDING=20           # Padding around the edges
+OUTPUT="output.png"  # Output filename
+
+# Shadow settings
+SHADOW_OPACITY=60
+SHADOW_SIGMA=15
+SHADOW_X=0
+SHADOW_Y=10
+
+# Blur settings
+BLUR_AMOUNT="0x60"   # Heavy blur
+BG_BRIGHTNESS=60     # 60% brightness (darkens background)
+
+# ───────────────────────────────────────────────────────────────────
+
+IMAGES=("$@")
+
+if [ ${#IMAGES[@]} -eq 0 ]; then
+    echo "Usage: $0 image1.png image2.png [image3.png ...]"
+    exit 1
+fi
+
+echo "Processing ${#IMAGES[@]} images in '$MODE' mode..."
+
+# STEP 1: Stack images with transparent gaps and shadows
+magick "${IMAGES[@]}" \
+    -background none \
+    -splice 0x${GAP} \
+    -gravity North \
+    -append \
+    -trim \
+    +repage \
+    \( +clone -background black -shadow ${SHADOW_OPACITY}x${SHADOW_SIGMA}+${SHADOW_X}+${SHADOW_Y} \) \
+    +swap \
+    -background none \
+    -layers merge \
+    +repage \
+    -bordercolor none \
+    -border ${PADDING} \
+    temp_stacked.png
+
+WIDTH=$(magick identify -format "%w" temp_stacked.png)
+HEIGHT=$(magick identify -format "%h" temp_stacked.png)
+
+# STEP 2: Generate background
+if [ "$MODE" == "blur" ]; then
+    echo "Creating blurred background..."
+    magick "${IMAGES[@]}" \
+        -gravity center -append \
+        -resize "${WIDTH}x${HEIGHT}^" \
+        -gravity center -extent "${WIDTH}x${HEIGHT}" \
+        -blur "$BLUR_AMOUNT" \
+        -modulate "$BG_BRIGHTNESS",100,100 \
+        temp_bg.png
+    magick temp_bg.png temp_stacked.png -gravity center -composite "$OUTPUT"
+    rm temp_bg.png
+
+elif [ "$MODE" == "transparent" ]; then
+    mv temp_stacked.png "$OUTPUT"
+
+else
+    echo "Error: MODE must be 'blur' or 'transparent'"
+    rm temp_stacked.png
+    exit 1
+fi
+
+rm -f temp_stacked.png
+echo "Success! Created: $OUTPUT"
