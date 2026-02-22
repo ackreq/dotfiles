@@ -29,7 +29,7 @@ ds() {
 _graphical_session() {
     local secs=$1
     shift
-    tput civil; trap 'tput cnorm' EXIT
+    tput civis; trap 'tput cnorm' EXIT
     echo
     while (( secs > 0 )); do
         local label="seconds"
