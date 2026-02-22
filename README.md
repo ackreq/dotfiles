@@ -1,5 +1,13 @@
 <div align="center">
 
+# 📸 Current Setup (niri)
+
+<img src="screenshots/niri.webp" 
+  width="70%" 
+alt="Current Setup"/>
+
+<br>
+
 # ⚙️ Configuration & Dotfiles
 
 <!-- ROW 1 -->
