@@ -34,7 +34,7 @@ _graphical_session() {
     while (( secs > 0 )); do
         local label="seconds"
         (( secs == 1 )) && label="second"
-        printf "\r\033[32mStarting graphical session in \033[33m%d\033[32m %s...\033[0m" "$secs" "$label"
+        printf "\r\033[K\033[32mStarting graphical session in \033[33m%d\033[32m %s...\033[0m" "$secs" "$label"
         sleep 1
         secs=$(( secs - 1 ))
     done
