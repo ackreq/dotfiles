@@ -5,6 +5,7 @@ workspace "dev"
 workspace "lab"
 
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // screenshot-path null
