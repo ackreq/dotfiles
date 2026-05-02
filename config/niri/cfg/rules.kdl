@@ -18,9 +18,27 @@ layer-rule {
     match namespace="dms:notification"
 }
 
-/-window-rule {
+window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+}
+
+window-rule {
+    opacity 0.9
+    background-effect { blur true; }
+    popups {
+        // geometry-corner-radius 15
+        opacity 0.9
+        background-effect { blur true; }
+    }
+
+    match app-id="st"
+    match app-id="^Alacritty$"
+    match app-id="^nemo$"
+    match app-id="^psensor$"
+    match app-id="^gtkhash$"
+    // match app-id="org.gnome.Nautilus"
+    // match app-id="zathura"
 }
 
 window-rule {
@@ -75,8 +93,8 @@ window-rule {
 
     match app-id=r#"Amberol"#
     match app-id=r#"gtkhash"#
-    match app-id=r#"Calculator"#
-    match app-id=r#"clocks"#
+    match app-id=r#"[Cc]alculator"#
+    match app-id=r#"[Cc]locks"#
     match app-id=r#"FileRoller"#
     match app-id=r#"psensor"#
     match app-id=r#"vlc"# title="[Oo]pen"

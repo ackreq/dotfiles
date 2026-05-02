@@ -1,5 +1,5 @@
 layout {
-    gaps 0 // 10
+    gaps 10 // 0
     center-focused-column "never" // "always", "never", "on-overflow"
     always-center-single-column
     // default-column-display "tabbed"
@@ -47,18 +47,10 @@ layout {
     shadow {
         on
         // draw-behind-window true
-
-        // Softness controls the shadow blur radius.
-        softness 30
-
-        // Spread expands the shadow.
-        spread 5
-
-        // Offset moves the shadow relative to the window.
-        offset x=0 y=5
-
-        // You can also change the shadow color and opacity.
-        color "#0007"
+        softness 30     // Softness controls the shadow blur radius.
+        spread 5        // Spread expands the shadow.
+        offset x=0 y=5  // Offset moves the shadow relative to the window.
+        color "#0007"   // You can also change the shadow color and opacity.
     }
 
     tab-indicator {
